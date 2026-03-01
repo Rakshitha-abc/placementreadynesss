@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:wght@100..900&display=swap');
+
+@theme {
+  --color-primary: hsl(245, 58%, 51%);
+  --color-primary-foreground: hsl(0, 0%, 100%);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #020617;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+::selection {
+  background: hsla(245, 58%, 51%, 0.3);
+  color: #fff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+@media print {
+  @page {
+    margin: 20mm;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow: visible !important;
+  }
+
+  /* Hide UI elements */
+  nav,
+  .preview-actions,
+  .ui-panel,
+  button,
+  .template-switcher,
+  header:not(.resume-header) {
+    display: none !important;
+  }
+
+  /* Ensure resume container takes full width and has no shadows */
+  .resume-sheet {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    position: static !important;
+  }
+
+  /* Page break rules */
+  section,
+  .resume-entry {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Reset any dark mode or slate-900 backgrounds */
+  .bg-slate-900\/40,
+  .bg-slate-950,
+  .bg-slate-900\/50,
+  .resume-container {
+    background: white !important;
+  }
+
+  /* Text color resets for readability */
+  .text-slate-500,
+  .text-slate-600,
+  .text-slate-400 {
+    color: #4b5563 !important;
+    /* Gray-600 */
+  }
+
+  .text-slate-700,
+  .text-slate-800 {
+    color: #1f2937 !important;
+    /* Gray-800 */
+  }
+
+  .border-slate-100,
+  .border-slate-200 {
+    border-color: #e5e7eb !important;
+  }
+
+  .border-black {
+    border-color: black !important;
+  }
+}
